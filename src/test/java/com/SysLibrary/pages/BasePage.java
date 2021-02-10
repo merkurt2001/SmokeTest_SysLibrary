@@ -25,7 +25,6 @@ public abstract class BasePage {
     @FindBy(css =".dropdown-item")
     public WebElement logOutLink;
 
-
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }
