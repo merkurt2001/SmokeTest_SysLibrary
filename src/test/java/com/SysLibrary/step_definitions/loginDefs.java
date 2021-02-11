@@ -1,5 +1,7 @@
 package com.SysLibrary.step_definitions;
 
+import com.SysLibrary.pages.DashboardPage;
+import com.SysLibrary.pages.LibrarianBooksPage;
 import com.SysLibrary.pages.LoginPage;
 import com.SysLibrary.utilities.BrowserUtils;
 import com.SysLibrary.utilities.ConfigurationReader;

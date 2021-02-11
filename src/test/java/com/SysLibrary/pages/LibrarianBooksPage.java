@@ -2,6 +2,7 @@ package com.SysLibrary.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class LibrarianBooksPage extends BasePage{
 
@@ -33,8 +34,23 @@ public class LibrarianBooksPage extends BasePage{
     public WebElement saveMessage;
 
     @FindBy(name = "tbl_books_length")
-    public WebElement showRecordsDropdown;
+    public WebElement recordsDropdown;
 
     @FindBy(css = "[type='search']")
     public WebElement searchBox;
+
+    @FindBy(id = "book_categories")
+    public WebElement selectBook;
+
+
+
+    public void selectBook (String selection){
+        Select bookList = new Select(selectBook);
+        bookList.selectByVisibleText(selection);
+    }
+
+    public void selectRecord (String selection){
+        Select chooseRecord = new Select(recordsDropdown);
+        chooseRecord.selectByVisibleText(selection);
+    }
 }
