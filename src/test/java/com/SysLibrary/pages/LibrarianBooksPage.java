@@ -1,8 +1,13 @@
 package com.SysLibrary.pages;
 
+import com.SysLibrary.utilities.BrowserUtils;
+import com.SysLibrary.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class LibrarianBooksPage extends BasePage{
 
@@ -40,17 +45,63 @@ public class LibrarianBooksPage extends BasePage{
     public WebElement searchBox;
 
     @FindBy(id = "book_categories")
-    public WebElement selectBook;
+    public WebElement selectBookMain;
 
 
-
+// this code bloc select book at the librarian books page according to user enterance
     public void selectBook (String selection){
-        Select bookList = new Select(selectBook);
+        Select bookList = new Select(selectBookMain);
         bookList.selectByVisibleText(selection);
     }
+//    this code bloc select record type (5, 10..) at the librarian books page according to user enterance
 
     public void selectRecord (String selection){
         Select chooseRecord = new Select(recordsDropdown);
         chooseRecord.selectByVisibleText(selection);
     }
+//     this code bloc returns list of records dropdown at the librarian books page
+    public List<String> recordList(){
+
+        Select showRecordsDropdown = new Select(recordsDropdown);
+
+        List<WebElement> options = showRecordsDropdown.getOptions();
+
+        List<String> actualList = BrowserUtils.getElementsText(options);
+
+        return actualList;
+    }
+//         this code bloc returns list of books at the librarian books MAIN page
+
+    public List<String> bookList(){
+
+        Select showRecordsDropdown = new Select(selectBookMain);
+
+        List<WebElement> options = showRecordsDropdown.getOptions();
+
+        List<String> actualList = BrowserUtils.getElementsText(options);
+
+        return actualList;
+    }
+
+//    this code bloc returns list of books at the ADD book Functionality
+    public List<String> bookListAdd(){
+
+        Select showRecordsDropdown = new Select(bookCategory);
+
+        List<WebElement> options = showRecordsDropdown.getOptions();
+
+        List<String> actualList = BrowserUtils.getElementsText(options);
+
+        return actualList;
+    }
+
+//    This code blok returns the list of FIELDS in ADD BOOKS functionality
+    public List<String> addBooksFieldsList(){
+
+        List<WebElement> fields = Driver.get().findElements(By.xpath("//*[@class='form-body']//label"));
+        List<String> actualList = BrowserUtils.getElementsText(fields);
+
+        return actualList;
+    }
+
 }
