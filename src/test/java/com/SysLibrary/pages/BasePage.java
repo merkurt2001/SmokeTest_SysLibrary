@@ -16,7 +16,13 @@ public abstract class BasePage {
     public WebElement usersButton;
 
     @FindBy(xpath = "//*[@id='menu_item']/li[3]")
-    public WebElement booksButton;
+    public WebElement librarianBooksButton;
+
+    @FindBy(xpath = "//*[@id='menu_item']/li[1]")
+    public WebElement studentBooksButton;
+
+    @FindBy(xpath = "//*[@id='menu_item']/li[2]")
+    public WebElement borrowingBooksButton;
 
 
     @FindBy(xpath = "//span[contains(.,'Test')]")

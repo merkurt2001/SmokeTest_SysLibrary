@@ -3,7 +3,7 @@ package com.SysLibrary.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class BooksPage extends BasePage{
+public class LibrarianBooksPage extends BasePage{
 
     @FindBy(css =".portlet-title>span>a")
     public WebElement addBooks;
