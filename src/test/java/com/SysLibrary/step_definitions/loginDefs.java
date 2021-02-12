@@ -37,4 +37,21 @@ public class loginDefs {
         new LoginPage().signInAsStudent();
 
     }
+    @When("the user enters the invalid user {string}{string}")
+    public void the_user_enters_the_invalid_user(String email, String password) {
+        new LoginPage().signIn(email,password);
+    }
+
+    @When("the user enters the invalid passwords {string}{string}")
+    public void the_user_enters_the_invalid_passwords(String email, String password) {
+        new LoginPage().signIn(email,password);
+    }
+
+    @Then("the UnAuthorized user should not be able to login")
+    public void the_UnAuthorized_user_should_not_be_able_to_login() {
+        BrowserUtils.waitFor(3);
+        String actualTitle = Driver.get().getTitle();
+        Assert.assertNotEquals("Library",actualTitle);
+    }
+
 }

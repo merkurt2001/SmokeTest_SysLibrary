@@ -44,5 +44,11 @@ public class LoginPage {
         signIn.click();
     }
 
+    public void signIn(String email, String password){
+
+        emailInput.sendKeys(email);
+        passwordInput.sendKeys(password);
+        signIn.click();
+    }
 
 }

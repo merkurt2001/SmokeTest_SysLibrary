@@ -3,7 +3,7 @@ Feature: Edit Book Functionality
 
   Background:
     Given the user is on the librarian books page
-@wip
+
   Scenario: Verify that librarian can edit books
 
     When the user enters the edit book button
