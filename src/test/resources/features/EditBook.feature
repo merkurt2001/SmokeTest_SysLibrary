@@ -1,8 +1,9 @@
+
 Feature: Edit Book Functionality
 
   Background:
     Given the user is on the librarian books page
-
+@wip
   Scenario: Verify that librarian can edit books
 
     When the user enters the edit book button
@@ -99,7 +100,7 @@ Feature: Edit Book Functionality
       | 200 |
       | 500 |
 
-  @wip
+
   Scenario: Verify that Librarian can find book by the book's Name and Author
 
     And the user enters valid author name into search box

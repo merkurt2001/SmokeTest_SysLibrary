@@ -6,6 +6,7 @@ import com.SysLibrary.pages.LoginPage;
 import com.SysLibrary.utilities.BrowserUtils;
 import com.SysLibrary.utilities.ConfigurationReader;
 import com.SysLibrary.utilities.Driver;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,19 +35,20 @@ public class EditBooksDefs {
 
     @Then("the user enters book information with valid credentials")
     public void the_user_enters_book_information_with_valid_credentials() {
-
+        BrowserUtils.waitFor(2);
+        Faker faker=new Faker();
         LibrarianBooksPage librarianBooksPage = new LibrarianBooksPage();
         librarianBooksPage.bookName.clear();
-        librarianBooksPage.bookName.sendKeys("merhab");
+        librarianBooksPage.bookName.sendKeys(faker.book().title());
         librarianBooksPage.bookIsbn.clear();
-        librarianBooksPage.bookIsbn.sendKeys("5554464444");
+        librarianBooksPage.bookIsbn.sendKeys("65874125877");
         librarianBooksPage.bookYear.clear();
-        librarianBooksPage.bookYear.sendKeys("1978");
+        librarianBooksPage.bookYear.sendKeys("2005");
         librarianBooksPage.bookAuthor.clear();
-        librarianBooksPage.bookAuthor.sendKeys("Val Ay");
+        librarianBooksPage.bookAuthor.sendKeys(faker.book().author());
         librarianBooksPage.selectBookInEdit("Classic");
         librarianBooksPage.bookDescription.clear();
-        librarianBooksPage.bookDescription.sendKeys("very good");
+        librarianBooksPage.bookDescription.sendKeys(faker.shakespeare().asYouLikeItQuote());
         BrowserUtils.waitFor(3);
         librarianBooksPage.bookSubmit.click();
 
