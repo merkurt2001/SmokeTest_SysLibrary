@@ -84,8 +84,8 @@ public class UsersPage extends BasePage{
     }
 //  This code blok returns the list of user group at ADD USER functionality
     public List<String> userGroupList(){
-
-        Select showRecordsDropdown = new Select(userGroupId);
+        WebElement dropdownElement = Driver.get().findElement(By.id("user_group_id"));
+        Select showRecordsDropdown = new Select(dropdownElement);
 
         List<WebElement> options = showRecordsDropdown.getOptions();
 
@@ -96,8 +96,8 @@ public class UsersPage extends BasePage{
 
 //    This code blok returns the list of status at ADD USER functionality
     public List<String> statusList(){
-
-        Select showRecordsDropdown = new Select(status);
+        WebElement dropdownElement = Driver.get().findElement(By.id("status"));
+        Select showRecordsDropdown = new Select(dropdownElement);
 
         List<WebElement> options = showRecordsDropdown.getOptions();
 

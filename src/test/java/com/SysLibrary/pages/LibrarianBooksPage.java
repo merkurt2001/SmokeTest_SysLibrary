@@ -26,7 +26,7 @@ public class LibrarianBooksPage extends BasePage{
     @FindBy(css ="[placeholder='Author']")
     public WebElement bookAuthor;
 
-    @FindBy(css ="#book_group_id")
+    @FindBy(id = "book_group_id")
     public WebElement bookCategory;
 
     @FindBy(css ="#description")
@@ -47,6 +47,16 @@ public class LibrarianBooksPage extends BasePage{
     @FindBy(id = "book_categories")
     public WebElement selectBookMain;
 
+    @FindBy(xpath = "//tbody/tr[1]/td[1]")
+    public WebElement editButton;
+
+//    this code bloc select book at the Edit Book Option according to user enterance
+    public void selectBookInEdit (String selection){
+        Select bookList = new Select(bookCategory);
+        bookList.selectByVisibleText(selection);
+    }
+
+
 
 // this code bloc select book at the librarian books page according to user enterance
     public void selectBook (String selection){
@@ -62,7 +72,9 @@ public class LibrarianBooksPage extends BasePage{
 //     this code bloc returns list of records dropdown at the librarian books page
     public List<String> recordList(){
 
-        Select showRecordsDropdown = new Select(recordsDropdown);
+        WebElement dropdownElement = Driver.get().findElement(By.name("tbl_books_length"));
+
+        Select showRecordsDropdown = new Select(dropdownElement);
 
         List<WebElement> options = showRecordsDropdown.getOptions();
 
@@ -73,8 +85,9 @@ public class LibrarianBooksPage extends BasePage{
 //         this code bloc returns list of books at the librarian books MAIN page
 
     public List<String> bookList(){
+        WebElement dropdownElement = Driver.get().findElement(By.id("book_categories"));
 
-        Select showRecordsDropdown = new Select(selectBookMain);
+        Select showRecordsDropdown = new Select(dropdownElement);
 
         List<WebElement> options = showRecordsDropdown.getOptions();
 
@@ -83,10 +96,11 @@ public class LibrarianBooksPage extends BasePage{
         return actualList;
     }
 
-//    this code bloc returns list of books at the ADD book Functionality
+//    this code bloc returns list of books at the ADD and EDIT book Functionality
     public List<String> bookListAdd(){
+        WebElement dropdownElement = Driver.get().findElement(By.id("book_group_id"));
 
-        Select showRecordsDropdown = new Select(bookCategory);
+        Select showRecordsDropdown = new Select(dropdownElement);
 
         List<WebElement> options = showRecordsDropdown.getOptions();
 
@@ -95,8 +109,8 @@ public class LibrarianBooksPage extends BasePage{
         return actualList;
     }
 
-//    This code blok returns the list of FIELDS in ADD BOOKS functionality
-    public List<String> addBooksFieldsList(){
+//    This code blok returns the list of FIELDS in ADD and EDIT BOOKS functionality
+    public List<String> booksFieldsList(){
 
         List<WebElement> fields = Driver.get().findElements(By.xpath("//*[@class='form-body']//label"));
         List<String> actualList = BrowserUtils.getElementsText(fields);
