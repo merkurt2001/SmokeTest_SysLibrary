@@ -41,9 +41,9 @@ public class EditBooksDefs {
         librarianBooksPage.bookName.clear();
         librarianBooksPage.bookName.sendKeys(faker.book().title());
         librarianBooksPage.bookIsbn.clear();
-        librarianBooksPage.bookIsbn.sendKeys("65874125877");
+        librarianBooksPage.bookIsbn.sendKeys(String.valueOf(faker.number().numberBetween(100000000,900000000)));
         librarianBooksPage.bookYear.clear();
-        librarianBooksPage.bookYear.sendKeys("2005");
+        librarianBooksPage.bookYear.sendKeys(String.valueOf(faker.number().numberBetween(1980,2020)));
         librarianBooksPage.bookAuthor.clear();
         librarianBooksPage.bookAuthor.sendKeys(faker.book().author());
         librarianBooksPage.selectBookInEdit("Classic");
