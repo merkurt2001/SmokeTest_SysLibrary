@@ -53,6 +53,14 @@ public class UsersPage extends BasePage{
     @FindBy(css = "[type='search']")
     public WebElement seachBox;
 
+    @FindBy(css =".toast-message")
+    public WebElement saveMessage;
+
+    @FindBy(xpath = "//tbody/tr[1]/td[1]")
+    public WebElement editUser;
+
+
+
 
 //    this code bloc select user group at ADD USER funcionality according user entrance
     public void selectUserGroupAdd (String selection){

@@ -18,6 +18,14 @@ public class StudentBooksPage extends BasePage{
     @FindBy(css = "[type='search']")
     public WebElement searchBox;
 
+    @FindBy(xpath = "//tbody/tr[1]/td[1]")
+    public WebElement borrowBook;
+
+    @FindBy(css =".toast-message")
+    public WebElement saveMessage;
+
+
+
 
     // this code bloc select book at the student books page according to user enterance
     public void selectBook (String selection){
