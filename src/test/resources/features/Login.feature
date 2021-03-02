@@ -1,3 +1,4 @@
+@wip
 Feature: Only Authorized Users should be able to login
 
   Background:
@@ -13,7 +14,7 @@ Feature: Only Authorized Users should be able to login
     When the user enters the student information
     Then the user should be able to login
 
-  @wip
+
   Scenario Outline: UnAuthorized users should not be able to login to the application
     When the user enters the invalid user "<email>""<password>"
     And the user enters the invalid passwords "<email>""<password>"
