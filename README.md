@@ -1,5 +1,5 @@
 # group_25_project
 
 
-Hello group_25. This is our smoke test for SysLibrary project. 
+This is our SysLibrary POM Structure. Please after Cloning it work on your own branch. And please use the locators and methods inside PAGES. 
 
