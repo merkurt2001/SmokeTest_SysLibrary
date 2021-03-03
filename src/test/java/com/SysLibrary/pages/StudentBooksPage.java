@@ -24,7 +24,7 @@ public class StudentBooksPage extends BasePage{
     @FindBy(css =".toast-message")
     public WebElement saveMessage;
 
-
+        //deneme
 
 
     // this code bloc select book at the student books page according to user enterance
