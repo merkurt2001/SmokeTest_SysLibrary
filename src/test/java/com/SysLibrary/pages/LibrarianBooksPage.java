@@ -54,6 +54,9 @@ public class LibrarianBooksPage extends BasePage{
     @FindBy(xpath = "//a[@href='tpl/add-user.html']")
     public WebElement addUser;
 
+    @FindBy(css = "#book_group_id")
+    public WebElement addBookList;
+
 //    this code bloc select book at the Edit Book Option according to user enterance
     public void selectBookInEdit (String selection){
         BrowserUtils.waitFor(2);

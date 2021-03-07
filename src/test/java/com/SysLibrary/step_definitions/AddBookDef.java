@@ -70,7 +70,7 @@ public class AddBookDef {
 
     @Then("Following categories should be present")
     public void following_categories_should_be_present(List<String> bookCategories) {
-        Assert.assertEquals(new LibrarianBooksPage().bookList(), bookCategories);
+        Assert.assertEquals(new LibrarianBooksPage().addBookList(), bookCategories);
     }
 
     @Then("Following categories should be chekable")
