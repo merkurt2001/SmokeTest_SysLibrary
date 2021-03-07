@@ -26,7 +26,7 @@ public class AddBookDef {
     @When("the librarian click the add book button")
     public void the_librarian_click_the_add_book_button() {
         new LibrarianBooksPage().addBooks.click();
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(2);
     }
 
     @When("Add book should have following parameters")
@@ -70,7 +70,9 @@ public class AddBookDef {
 
     @Then("Following categories should be present")
     public void following_categories_should_be_present(List<String> bookCategories) {
-        Assert.assertEquals(new LibrarianBooksPage().bookListAdd(), bookCategories);
+        Select select=new Select(Driver.get().findElement(By.cssSelector("#book_group_id")));
+        List<String> actualList=BrowserUtils.getElementsText(select.getOptions());
+        Assert.assertEquals(actualList, bookCategories);
     }
 
     @Then("Following categories should be chekable")
