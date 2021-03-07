@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import javax.sound.sampled.Line;
 import java.util.List;
 
 public class LibrarianBooksPage extends BasePage{
@@ -120,6 +121,19 @@ public class LibrarianBooksPage extends BasePage{
         List<String> actualList = BrowserUtils.getElementsText(fields);
 
         return actualList;
+    }
+
+    public static WebElement parameters(String name){
+
+        String path="//*[@class='control-label'][contains(.,'"+name+"')]/../*[2]";
+        WebElement input=Driver.get().findElement(By.xpath(path));
+        return input;
+    }
+
+    public static List<String> inputNames(){
+        List<String> inputsName=BrowserUtils.getElementsText(By.xpath("//*[@class='control-label']"));
+        return inputsName;
+
     }
 
 }
