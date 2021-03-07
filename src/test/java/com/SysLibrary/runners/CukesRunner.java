@@ -10,8 +10,9 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports"},
         features = "src/test/resources/features",
         glue = "com/SysLibrary/step_definitions",
-        dryRun = false,
-        tags = "@SYS-318"
+        dryRun = false,    
+        tags = "@wip"
+
 )
 public class CukesRunner {
 }
