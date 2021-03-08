@@ -112,6 +112,11 @@ public class AddBookDef {
         new Actions(Driver.get()).moveToElement(new LibrarianBooksPage().saveMessage).perform();
         Assert.assertTrue(new LibrarianBooksPage().saveMessage.isDisplayed());
     }
+    @Then("the user should be able to add the book")
+    public void the_user_should_be_able_to_add_the_book() {
+        String expected = "The book has been created.";
+        Assert.assertEquals(expected, new LibrarianBooksPage().saveMessage.getText());
+    }
 
 
 
