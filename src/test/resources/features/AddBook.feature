@@ -1,3 +1,4 @@
+
 Feature:
 
   Background:
@@ -62,7 +63,7 @@ Feature:
       | 1234 |
 
 
-  @SYS-365 @SYS-362
+  @SYS-365 @SYS-362 @shb
   Scenario: şenol/following categories
     And Following categories should be present
       | Action and Adventure    |
