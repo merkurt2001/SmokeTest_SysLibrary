@@ -36,6 +36,7 @@ public class StudentBooksPage extends BasePage{
     //         this code bloc returns list of books at the student books MAIN page
 
     public List<String> bookList(){
+        BrowserUtils.waitFor(2);
 
         Select showRecordsDropdown = new Select(selectBookMain);
 
@@ -54,6 +55,7 @@ public class StudentBooksPage extends BasePage{
     }
     //     this code bloc returns list of records dropdown at the student books page
     public List<String> recordList(){
+        BrowserUtils.waitFor(2);
 
         Select showRecordsDropdown = new Select(recordsDropdown);
 
