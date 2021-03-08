@@ -21,12 +21,13 @@ public class EditBookDefs {
         String url= ConfigurationReader.get("url");
         Driver.get().get(url);
         new LoginPage().signInAsLibrarian();
+        new DashboardPage().librarianBooksButton.click();
 
     }
 
     @When("the user enters the edit book button")
     public void the_user_enters_the_edit_book_button() {
-        new DashboardPage().librarianBooksButton.click();
+
         new LibrarianBooksPage().editButton.click();
     }
 
