@@ -26,7 +26,7 @@ public class LoginDefs {
     public void the_user_should_be_able_to_login() {
         BrowserUtils.waitFor(3);
         String actualTitle = Driver.get().getTitle();
-        Assert.assertEquals("Library",actualTitle);
+        Assert.assertEquals("Librar",actualTitle);
     }
 
     @When("the user enters the student information")
