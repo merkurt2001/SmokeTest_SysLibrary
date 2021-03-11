@@ -77,8 +77,6 @@ Feature:
 		    And the user enters book information with valid credentials
 		    Then the user should be able to add the book	
 
-
-
 	
 	@SYS-403 @SYS-391
 	Scenario: Verify that librarian can log out
