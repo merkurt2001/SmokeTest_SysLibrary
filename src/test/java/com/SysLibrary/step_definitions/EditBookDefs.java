@@ -103,7 +103,7 @@ public class EditBookDefs {
         librarianBooksPage.bookYear.sendKeys(String.valueOf(faker.number().numberBetween(1980,2020)));
         librarianBooksPage.bookAuthor.clear();
         librarianBooksPage.bookAuthor.sendKeys(faker.book().author());
-
+        BrowserUtils.waitFor(2);
         librarianBooksPage.selectBookInEdit("Fable");
         librarianBooksPage.bookDescription.clear();
         librarianBooksPage.bookDescription.sendKeys(faker.shakespeare().asYouLikeItQuote());
