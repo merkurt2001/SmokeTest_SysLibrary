@@ -78,14 +78,6 @@ Feature:
 		    Then the user should be able to add the book	
 
 	
-	@SYS-402 @SYS-391
-	Scenario: Verify that librarian can edit books
-		Given the user is on the librarian books page
-		    When the user enters the edit books button
-		    And the user enters book information with valid credentials
-		    Then the user should be able to save the changes	
-
-	
 	@SYS-403 @SYS-391
 	Scenario: Verify that librarian can log out
 		 When the user enters the librarian information
