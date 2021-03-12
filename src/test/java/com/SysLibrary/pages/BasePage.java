@@ -2,6 +2,7 @@ package com.SysLibrary.pages;
 
 import com.SysLibrary.utilities.BrowserUtils;
 import com.SysLibrary.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -48,5 +49,9 @@ public abstract class BasePage {
         BrowserUtils.clickWithJS(logOutLink);
     }
 
+    public void navigatePages(String pageName){
+        BrowserUtils.waitFor(3);
+        Driver.get().findElement(By.xpath("//*[@id='menu_item']//*[contains(text(),'"+pageName+"')]")).click();
+    }
 
 }
